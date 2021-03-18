@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 # PyMySQL 
 import pymysql
 pymysql.install_as_MySQLdb()
-
+# Config variables
 
 # Heroku check
 is_heroku = False
@@ -30,8 +30,9 @@ if is_heroku == True:
     remote_db_pwd = os.environ.get('remote_db_pwd')
 else:
     # use the config.py file if IS_HEROKU is not detected
-    from config import remote_db_endpoint, remote_db_port, remote_db_name, remote_db_user, remote_db_pwd
-
+   
+from config import remote_db_endpoint, remote_db_port
+from config import remote_db_name, remote_db_user, remote_db_pwd
 
 #======MEAKIN STARTS=======
 import quandl
@@ -52,6 +53,13 @@ def index():
 
     # use render_template to serve up the index.html
     return render_template('index.html')
+
+    
+@app.route("/index1")
+def index1():
+
+    # use render_template to serve up the index.html
+    return render_template('index1.html')
 
 # =========== VERA STARTS =========
 @app.route("/tickerlist")
