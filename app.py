@@ -31,17 +31,18 @@ if is_heroku == True:
     remote_db_name = os.environ.get('remote_db_name')
     remote_db_user = os.environ.get('remote_db_user')
     remote_db_pwd = os.environ.get('remote_db_pwd')
+    API_key = os.environ.get('API_key')
+    api_key = os.environ.get('api_key')
+    
 else:
     # use the config.py file if IS_HEROKU is not detected
    
-    from config import remote_db_endpoint, remote_db_port, remote_db_name, remote_db_user, remote_db_pwd
+    from config import remote_db_endpoint, remote_db_port, remote_db_name, remote_db_user, remote_db_pwd, API_key, api_key
 
 
 #======MEAKIN STARTS=======
 import quandl
-from config import API_key
-#=====MEAKIN ENDS==========
-from config import api_key
+
 # %%
 # Cloud MySQL Database Connection on AWS
 pymysql.install_as_MySQLdb()
