@@ -12,8 +12,8 @@ from sqlalchemy import create_engine
 import pymysql
 pymysql.install_as_MySQLdb()
 # Config variables
-from config import remote_db_endpoint, remote_db_port
-from config import remote_db_name, remote_db_user, remote_db_pwd
+# from config import remote_db_endpoint, remote_db_port
+# from config import remote_db_name, remote_db_user, remote_db_pwd
 
 
 # Heroku check
